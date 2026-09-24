@@ -94,6 +94,8 @@ struct CardEditorView: View {
             emoji: emojiText,
             imageData: pendingImageData
         )
+        // A completed edit returns caregivers to the normal custom board.
+        app.cardMode = .custom
         dismiss()
     }
 
