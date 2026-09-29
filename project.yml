@@ -1,6 +1,6 @@
 name: TapToTalker
 options:
-  bundleIdPrefix: com.devcalapps
+  bundleIdPrefix: com.longestchariot
   deploymentTarget:
     iOS: "17.0"
 settings:
@@ -11,7 +11,7 @@ targets:
     platform: iOS
     sources: [TapToTalker]
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.devcalapps.TapToTalker
+      PRODUCT_BUNDLE_IDENTIFIER: com.longestchariot.taptotalker
       DEVELOPMENT_TEAM: Y65K339Z7J
       INFOPLIST_KEY_UIStatusBarHidden: YES
       INFOPLIST_KEY_UILaunchScreen_Generation: NO
