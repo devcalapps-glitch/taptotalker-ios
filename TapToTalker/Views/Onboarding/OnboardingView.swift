@@ -7,7 +7,6 @@ struct OnboardingView: View {
     @State private var selectedMode: VocabularyMode = .intermediate
     @State private var pin = ""
     @State private var confirmPIN = ""
-    @State private var driveSyncEnabled = false
     @State private var pinError: String?
     @State private var editingCard: AACCard?
     @State private var selectedStarterID: String?
@@ -68,7 +67,6 @@ struct OnboardingView: View {
         .offset(y: appeared ? 0 : 12)
         .onAppear {
             selectedMode = app.vocabularyMode
-            driveSyncEnabled = app.googleDriveSyncEnabled
             syncSelectedStarter()
             withAnimation(.easeOut(duration: 0.45)) { appeared = true }
         }
@@ -499,70 +497,29 @@ struct OnboardingView: View {
         VStack(alignment: .leading, spacing: 16) {
             stepIntro(
                 eyebrow: "Caregiver tools",
-                title: "Keep settings safe — and ready to sync",
-                detail: "A PIN locks caregiver settings. Google Drive sync is optional and reserved for a future backup."
+                title: "Keep settings safe",
+                detail: "A PIN locks caregiver settings so the board stays the way you set it up."
             )
 
-            let panels = Group {
-                VStack(alignment: .leading, spacing: 14) {
-                    labelRow(symbol: "lock.fill", tint: steps[2].tint, title: "Caregiver PIN")
+            VStack(alignment: .leading, spacing: 14) {
+                labelRow(symbol: "lock.fill", tint: steps[2].tint, title: "Caregiver PIN")
 
-                    pinField(placeholder: "Create 4–8 digit PIN", text: $pin)
-                    pinField(placeholder: "Confirm PIN", text: $confirmPIN)
+                pinField(placeholder: "Create 4–8 digit PIN", text: $pin)
+                pinField(placeholder: "Confirm PIN", text: $confirmPIN)
 
-                    if let pinError {
-                        Text(pinError)
-                            .font(.system(.callout, design: .rounded).weight(.semibold))
-                            .foregroundStyle(Color(red: 0.78, green: 0.18, blue: 0.18))
-                    } else {
-                        Text("Optional — leave blank to skip for now.")
-                            .font(.system(.footnote, design: .rounded))
-                            .foregroundStyle(.secondary)
-                    }
+                if let pinError {
+                    Text(pinError)
+                        .font(.system(.callout, design: .rounded).weight(.semibold))
+                        .foregroundStyle(Color(red: 0.78, green: 0.18, blue: 0.18))
+                } else {
+                    Text("Optional — leave blank to skip for now.")
+                        .font(.system(.footnote, design: .rounded))
+                        .foregroundStyle(.secondary)
                 }
-                .padding(20)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(panelBackground(tint: steps[2].tint))
-
-                VStack(alignment: .leading, spacing: 14) {
-                    labelRow(symbol: "externaldrive.fill.badge.icloud", tint: steps[1].tint, title: "Google Drive")
-
-                    Toggle(isOn: $driveSyncEnabled) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Enable sync later")
-                                .font(.system(.headline, design: .rounded))
-                            Text("We’ll remember this choice and ask you to connect Google when backup ships.")
-                                .font(.system(.subheadline, design: .rounded))
-                                .foregroundStyle(.secondary)
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
-                    }
-                    .tint(Color.accentColor)
-
-                    if driveSyncEnabled {
-                        HStack(spacing: 8) {
-                            Image(systemName: "sparkles")
-                            Text("Preference saved for a future release.")
-                        }
-                        .font(.system(.footnote, design: .rounded).weight(.semibold))
-                        .foregroundStyle(Color.accentColor)
-                        .padding(10)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(steps[1].tint.opacity(0.35), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                    }
-
-                    Spacer(minLength: 0)
-                }
-                .padding(20)
-                .frame(maxWidth: .infinity, minHeight: compact ? 0 : 220, alignment: .leading)
-                .background(panelBackground(tint: steps[1].tint))
             }
-
-            if compact {
-                VStack(alignment: .leading, spacing: 16) { panels }
-            } else {
-                HStack(alignment: .top, spacing: 16) { panels }
-            }
+            .padding(20)
+            .frame(maxWidth: compact ? .infinity : 520, alignment: .leading)
+            .background(panelBackground(tint: steps[2].tint))
         }
     }
 
@@ -784,8 +741,7 @@ struct OnboardingView: View {
         pinError = nil
         app.completeOnboarding(
             vocabularyMode: selectedMode,
-            pin: trimmed,
-            googleDriveSyncEnabled: driveSyncEnabled
+            pin: trimmed
         )
     }
 }

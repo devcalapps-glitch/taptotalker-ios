@@ -65,15 +65,11 @@ A caregiver change to a card’s label, emoji, or photo that replaces the built-
 _Avoid_: Patch, customization record, mutation
 
 **Onboarding**:
-First-run caregiver setup: vocabulary mode, optional card personalization, optional PIN and sync preference.
+First-run caregiver setup: vocabulary mode, optional card personalization, and optional PIN.
 _Avoid_: Wizard, tutorial, intro
 
-### Safety & sync
+### Safety
 
 **Caregiver PIN**:
 Optional numeric lock that gates caregiver settings.
 _Avoid_: Password, passcode, auth
-
-**Google Drive sync**:
-Optional future backup preference; not connected yet.
-_Avoid_: Cloud sync, iCloud, backup (unless describing that future feature)

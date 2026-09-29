@@ -8,36 +8,31 @@ struct AppSettings: Codable, Equatable, Sendable {
     var caregiverPIN: String
     /// First-launch caregiver setup completed.
     var hasCompletedOnboarding: Bool
-    /// Opt-in for future Google Drive backup (not connected yet).
-    var googleDriveSyncEnabled: Bool
 
     static let `default` = AppSettings(
         vocabularyMode: .intermediate,
         cardMode: .default,
         caregiverPIN: "",
-        hasCompletedOnboarding: false,
-        googleDriveSyncEnabled: false
+        hasCompletedOnboarding: false
     )
 
     var hasPIN: Bool { !caregiverPIN.isEmpty }
 
     enum CodingKeys: String, CodingKey {
         case vocabularyMode, cardMode, caregiverPIN
-        case hasCompletedOnboarding, googleDriveSyncEnabled
+        case hasCompletedOnboarding
     }
 
     init(
         vocabularyMode: VocabularyMode,
         cardMode: CardMode,
         caregiverPIN: String,
-        hasCompletedOnboarding: Bool,
-        googleDriveSyncEnabled: Bool
+        hasCompletedOnboarding: Bool
     ) {
         self.vocabularyMode = vocabularyMode
         self.cardMode = cardMode
         self.caregiverPIN = caregiverPIN
         self.hasCompletedOnboarding = hasCompletedOnboarding
-        self.googleDriveSyncEnabled = googleDriveSyncEnabled
     }
 
     init(from decoder: Decoder) throws {
@@ -46,7 +41,6 @@ struct AppSettings: Codable, Equatable, Sendable {
         cardMode = try container.decodeIfPresent(CardMode.self, forKey: .cardMode) ?? .default
         caregiverPIN = try container.decodeIfPresent(String.self, forKey: .caregiverPIN) ?? ""
         hasCompletedOnboarding = try container.decodeIfPresent(Bool.self, forKey: .hasCompletedOnboarding) ?? true
-        googleDriveSyncEnabled = try container.decodeIfPresent(Bool.self, forKey: .googleDriveSyncEnabled) ?? false
     }
 }
 
