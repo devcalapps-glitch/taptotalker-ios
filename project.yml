@@ -12,6 +12,7 @@ targets:
     sources: [TapToTalker]
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.devcalapps.TapToTalker
+      DEVELOPMENT_TEAM: Y65K339Z7J
       INFOPLIST_KEY_UIStatusBarHidden: YES
       INFOPLIST_KEY_UILaunchScreen_Generation: NO
       INFOPLIST_KEY_UIApplicationSceneManifest_Generation: NO
