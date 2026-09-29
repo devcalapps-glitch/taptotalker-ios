@@ -26,6 +26,7 @@
 		A1B2C3D4E5F60718293A4B50 /* Theme/OpenMoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B51 /* Theme/OpenMoji.swift */; };
 		A1B2C3D4E5F60718293A4B52 /* Resources/OpenMoji-ATTRIBUTION.txt in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B53 /* Resources/OpenMoji-ATTRIBUTION.txt */; };
 		A1B2C3D4E5F60718293A4B54 /* Resources/OpenMoji-LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B55 /* Resources/OpenMoji-LICENSE.txt */; };
+		A1B2C3D4E5F60718293A4B56 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B57 /* PrivacyInfo.xcprivacy */; };
 		99C89351EA3242F3A7E8AFE7 /* Views/BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679666A3F5C24A4C80A3E476 /* Views/BoardView.swift */; };
 		B9DA27DE97774FC4B92565F3 /* Views/Settings/PINEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D34A0F5FB7491EBB1BACBC /* Views/Settings/PINEntryView.swift */; };
 		C125BB83E86045559D6413AD /* Views/Settings/CardEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778D934D183946378D459FC5 /* Views/Settings/CardEditorView.swift */; };
@@ -58,6 +59,7 @@
 		A1B2C3D4E5F60718293A4B51 /* Theme/OpenMoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme/OpenMoji.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F60718293A4B53 /* Resources/OpenMoji-ATTRIBUTION.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Resources/OpenMoji-ATTRIBUTION.txt"; sourceTree = "<group>"; };
 		A1B2C3D4E5F60718293A4B55 /* Resources/OpenMoji-LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Resources/OpenMoji-LICENSE.txt"; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B57 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3C3F888135404DF18015283B /* TapToTalkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToTalkerTests.swift; sourceTree = "<group>"; };
 		465F1C4D232A4EB3B9F58BFD /* Views/Settings/CaregiverSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Settings/CaregiverSettingsView.swift; sourceTree = "<group>"; };
 		49D34A0F5FB7491EBB1BACBC /* Views/Settings/PINEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/Settings/PINEntryView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				A1B2C3D4E5F60718293A4B51 /* Theme/OpenMoji.swift */,
 				A1B2C3D4E5F60718293A4B53 /* Resources/OpenMoji-ATTRIBUTION.txt */,
 				A1B2C3D4E5F60718293A4B55 /* Resources/OpenMoji-LICENSE.txt */,
+				A1B2C3D4E5F60718293A4B57 /* PrivacyInfo.xcprivacy */,
 				FB85B895621D4E99A8CCCF68 /* Data/DefaultVocabulary.swift */,
 				ECCF99AE16D8455A9F31923B /* Data/PersistenceStore.swift */,
 				7D69C7F3E43542B98ECD8284 /* Views/AACCardButton.swift */,
@@ -236,6 +239,7 @@
 				2B8D5F03C9E15A2B0F7D3C21 /* Assets.xcassets in Resources */,
 				A1B2C3D4E5F60718293A4B52 /* Resources/OpenMoji-ATTRIBUTION.txt in Resources */,
 				A1B2C3D4E5F60718293A4B54 /* Resources/OpenMoji-LICENSE.txt in Resources */,
+				A1B2C3D4E5F60718293A4B56 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
